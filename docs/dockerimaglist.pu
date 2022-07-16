@@ -1,0 +1,7 @@
+@startuml
+
+(*) --> "pywhale image_list"
+-->[manage.py] "start_command(argv)"
+--> [pywhale.core.managers(init)] "aa"
+
+@enduml
