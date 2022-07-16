@@ -1,12 +1,22 @@
 from pywhale.core.managers.base import BaseClass
 import pywhale.templates as pytemps
+import pickle
 
 class SetupPythonCLass(BaseClass):
     def run_command(self):
 
         # dockerの場所を取得する
-        print(pytemps.temp_dir)
+        print(pytemps.temp_python)
+        self.run_docker_command(
+            f"docker image build -t pywhale {pytemps.temp_python}"
+        )
+        self.run_docker_command(
+            f"docker run --name pywhale -itd pywhale /bin/sh"
+        )
 
-        pass
+        # parameterファイルを作成
 
+        # docker run --name pywhale -itd pywhale /bin/sh
+        
+        # docker image build -t pywhale .
         # self.run_docker_command("docker image ls")
