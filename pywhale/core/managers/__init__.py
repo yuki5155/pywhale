@@ -2,6 +2,7 @@ import sys
 import subprocess
 from .commands.image_list import ImageListClass
 from .base import BaseClass
+from .commands.setup_python import SetupPythonCLass
 # def run_command(self, command=None):
 #     # command.
 #     command = command.split(" ")
@@ -21,7 +22,9 @@ class CommandClass(BaseClass):
             image = ImageListClass()
             # print("aaa")
             image.run_command()
-
+        if sys.argv[1]=='setup_python':
+            s = SetupPythonCLass()
+            s.run_command()
 
 def start_command():
     c = CommandClass()
