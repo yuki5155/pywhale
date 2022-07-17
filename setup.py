@@ -10,15 +10,15 @@ setup(
     description = 'Hoge',
     install_requires = ['setuptools'],
     packages=[
-        #"pywhale"
+        "pywhale"
         'pywhale.templates.python_temps'
     ],
     package_dir={
-        #'pywhale.templates.python_temps': 'pywhale/templates',
+        'pywhale.templates.python_temps': 'pywhale/templates',
         "pywhale": 'pywhale'
     },
     package_data={
-        #"pywhale": ['./*'],
+        "pywhale": ['./*'],
         'pywhale.templates.python_temps': ['python_temps/*']
     },
     entry_points = {
