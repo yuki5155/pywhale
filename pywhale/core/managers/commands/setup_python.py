@@ -11,7 +11,7 @@ class SetupPythonCLass(BaseClass):
         # print(pytemps.temp_python)
         docker_file = self.parser.parse_args().dockerfile_dir
         if docker_file==None:
-            docker_file = "./"
+            docker_file = os.getcwd()
         self.run_docker_command(
             f"docker image build -t pywhale {docker_file}"
         )
