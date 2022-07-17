@@ -11,7 +11,7 @@ setup(
     install_requires = ['setuptools'],
     packages=['python_temps'],
     package_dir={'python_temps': 'pywhale/templates'},
-    package_data={'python_temps': ['python_temps/Dockerfile']},
+    package_data={'python_temps': ['python_temps/*']},
     entry_points = {
         'console_scripts': [
             'pywhale = pywhale.core.managers:start_command',
