@@ -25,8 +25,14 @@ class SetupPythonCLass(BaseClass):
             try:
                 os.makedirs("./script")
                 param.workdir = f"/script"
+                self.run_docker_command(
+                    f"docker exec --workdir /app/src/ pywhale mkdir script"
+                )
             except FileExistsError:
                 param.workdir = f"/script"
+                self.run_docker_command(
+                    f"docker exec --workdir /app/src/ pywhale mkdir script"
+                )
         
         else:
             try:

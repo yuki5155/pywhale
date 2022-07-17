@@ -9,6 +9,7 @@ from .commands.run import RunPythonClass
 # from .commands.start_python_project
 # PyShellClass
 from .commands.pyshell import PyShellClass
+from .commands.run_cmd import RunCmdClass
 
 # def run_command(self, command=None):
 #     # command.
@@ -47,6 +48,7 @@ class CommandClass(BaseClass):
         if sys.argv[1]=="run":
             self.parser.add_argument('run')
             self.parser.add_argument('--cmd', help='')
+            self.parser.add_argument('--nocache', help='TRUE or False')
             self.parser.parse_args()
 
             r = RunPythonClass()
@@ -60,6 +62,14 @@ class CommandClass(BaseClass):
             self.parser.add_argument('pyshell')
             p = PyShellClass()
             p.run_command()
+        
+        if sys.argv[1]=="run_cmd":
+            self.parser.add_argument('run_cmd')
+            r = RunCmdClass()
+            r.run_command()
+
+        
+        
             
 
 def start_command():

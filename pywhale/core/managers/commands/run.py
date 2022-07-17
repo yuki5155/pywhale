@@ -9,6 +9,8 @@ class RunPythonClass(BaseClass):
         with open(dir + "/projectparams.pkl", "rb") as p:
             param = pickle.load(p)
         cmd = self.parser.parse_args().cmd
+
+        nocache = self.parser.parse_args().nocache
         # print(param.workdir)
         # ディレクトリ元を丸ごとコピーしてコンテナ内に入れる
 
