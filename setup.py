@@ -14,8 +14,8 @@ setup(
         'pywhale.templates.python_temps'
     ],
     package_dir={
-        'pywhale.templates.python_temps': 'pywhale/templates'
-        "pywhale"
+        'pywhale.templates.python_temps': 'pywhale/templates',
+        "pywhale": 'pywhale'
     },
     package_data={
         "pywhale": ['./*'],
