@@ -35,6 +35,7 @@ class CommandClass(BaseClass):
         if sys.argv[1]=='setup_python':
             self.parser.add_argument('setup_python')
             self.parser.add_argument('--workdir', help='')
+            self.parser.add_argument('--dockerfile_dir', help='', required=True)
             self.parser.parse_args()
             s = SetupPythonCLass()
             s.run_command()

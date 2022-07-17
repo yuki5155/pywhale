@@ -9,8 +9,11 @@ class SetupPythonCLass(BaseClass):
 
         # dockerの場所を取得する
         # print(pytemps.temp_python)
+        docker_file = self.parser.parse_args().dockerfile_dir
+        if docker_file==None:
+            docker_file = "./"
         self.run_docker_command(
-            f"docker image build -t pywhale {pytemps.temp_python}"
+            f"docker image build -t pywhale {docker_file}"
         )
         self.run_docker_command(
             f"docker run --name pywhale -itd pywhale /bin/sh"
