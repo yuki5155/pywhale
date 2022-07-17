@@ -11,7 +11,7 @@ setup(
     install_requires = ['setuptools'],
     entry_points = {
         'console_scripts': [
-            'pywhale = pywhale.manager:start',
+            'pywhale = pywhale.core.managers:start_command',
         ]
     }
 )
