@@ -8,7 +8,7 @@ class RunPythonClass(BaseClass):
         dir = os.getcwd()
         with open(dir + "/projectparams.pkl", "rb") as p:
             param = pickle.load(p)
-        cmd = self.parser.parse_args.cmd
+        cmd = self.parser.parse_args().cmd
         # print(param.workdir)
         # ディレクトリ元を丸ごとコピーしてコンテナ内に入れる
 
