@@ -1,5 +1,4 @@
 from pywhale.core.managers.base import BaseClass
-import pywhale.templates as pytemps
 
 class DownPythonCLass(BaseClass):
     def run_command(self):

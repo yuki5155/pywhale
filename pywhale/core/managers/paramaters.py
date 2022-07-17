@@ -1,0 +1,2 @@
+class ParamClass:
+    workdir = None
