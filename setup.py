@@ -14,12 +14,12 @@ setup(
         'pywhale.templates.python_temps'
     ],
     package_dir={
-        "pywhale.core":"pywhale/core",
+        "pywhale.core": "pywhale/core",
         'pywhale.templates.python_temps': 'pywhale/templates',
         #"pywhale": 'pywhale'
     },
     package_data={
-        "pywhale.core": ['./*'],
+        "pywhale.core": ['./core/*'],
         'pywhale.templates.python_temps': ['python_temps/*']
     },
     entry_points = {
