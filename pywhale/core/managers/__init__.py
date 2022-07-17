@@ -50,6 +50,11 @@ class CommandClass(BaseClass):
 
             r = RunPythonClass()
             r.run_command()
+
+        if sys.argv[1]=="install":
+            pass
+
+
         if sys.argv[1]=="pyshell":
             self.parser.add_argument('pyshell')
             p = PyShellClass()
