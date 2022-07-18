@@ -19,9 +19,10 @@ class RunCmdClass(BaseClass):
         )
 
 
-        self.run_docker_command(
-            f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
-        )
+        # self.run_docker_command(
+        #     f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
+        # )
+        os.system(f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}")
 
         # コンテナ側のディレクトリをコピーする
         self.run_docker_command(
