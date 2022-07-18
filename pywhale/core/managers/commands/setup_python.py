@@ -10,14 +10,28 @@ class SetupPythonCLass(BaseClass):
         # dockerの場所を取得する
         # print(pytemps.temp_python)
         docker_file = self.parser.parse_args().dockerfile_dir
+        ports = self.parser.parse_args().ports
         if docker_file==None:
-            docker_file = os.getcwd()
-        self.run_docker_command(
-            f"docker image build -t pywhale {docker_file}"
-        )
-        self.run_docker_command(
-            f"docker run --name pywhale -itd pywhale /bin/sh"
-        )
+            docker_file = os.getcwd() + "./"
+
+        if ports != None:
+
+            self.run_docker_command(
+                f"docker image build -t pywhale {docker_file}"
+            )
+            self.run_docker_command(
+                f"docker run --name pywhale -itd -p {ports} pywhale /bin/sh"
+            )
+        
+        else:
+            self.run_docker_command(
+                f"docker image build -t pywhale {docker_file}"
+            )
+            self.run_docker_command(
+                f"docker run --name pywhale -itd pywhale /bin/sh"
+            )
+
+
 
         param = ParamClass()
         # print(self.parser.parse_args().workdir)

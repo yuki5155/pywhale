@@ -27,6 +27,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument('setup_python')
             self.parser.add_argument('down_python')
             self.parser.add_argument('run')
+            self.parser.add_argument('run_cmd')
             self.parser.print_help()
         if sys.argv[1]=='images_list':
             self.parser.add_argument('images_list')
@@ -37,6 +38,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument('setup_python')
             self.parser.add_argument('--workdir', help='')
             self.parser.add_argument('--dockerfile_dir', help='', required=True)
+            self.parser.add_argument('--ports', help='ex: 8000:8000',)
             self.parser.parse_args()
             s = SetupPythonCLass()
             s.run_command()
@@ -55,7 +57,9 @@ class CommandClass(BaseClass):
             r.run_command()
 
         if sys.argv[1]=="install":
-            pass
+            self.parser.add_argument('install')
+            # ライブラリ名
+            # requirements.txtを生成して保存
 
 
         if sys.argv[1]=="pyshell":
