@@ -1,6 +1,7 @@
 from pywhale.core.managers.base import BaseClass
 import pickle
 import os
+import subprocess
 
 class RunCmdClass(BaseClass):
     def run_command(self):
@@ -21,9 +22,13 @@ class RunCmdClass(BaseClass):
         # for i in range(100):
         #     os.system(f"kill -9 {i}")
         for i in range(100):
-            self.run_docker_command(
-                f"docker exec --workdir /app/src{param.workdir} pywhale kill -9 {i}"
-            )
+            try:
+                self.run_docker_command(
+                    f"docker exec --workdir /app/src{param.workdir} pywhale kill -9 {i}"
+                )
+            except subprocess.CalledProcessError:
+                pass
+
 
 
         # self.run_docker_command(
