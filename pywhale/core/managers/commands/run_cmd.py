@@ -18,8 +18,12 @@ class RunCmdClass(BaseClass):
             f"docker cp .{param.workdir} pywhale:/app/src"
         )
 
+        # for i in range(100):
+        #     os.system(f"kill -9 {i}")
         for i in range(100):
-            os.system(f"kill -9 {i}")
+            self.run_docker_command(
+                f"docker exec --workdir /app/src{param.workdir} pywhale kill -9 {i}"
+            )
 
 
         # self.run_docker_command(
