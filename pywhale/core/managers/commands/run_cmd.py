@@ -12,6 +12,18 @@ class RunCmdClass(BaseClass):
         with open(dir + "/projectparams.pkl", "rb") as p:
             param = pickle.load(p)
         cmd = " ".join(unknown)
+
+        # ローカルのディレクトリをコンテナ内にコピーする
+        self.run_docker_command(
+            f"docker cp .{param.workdir} pywhale:/app/src"
+        )
+
+
         self.run_docker_command(
             f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
+        )
+
+        # コンテナ側のディレクトリをコピーする
+        self.run_docker_command(
+            f"docker cp pywhale:/app/src .{param.workdir}"
         )
