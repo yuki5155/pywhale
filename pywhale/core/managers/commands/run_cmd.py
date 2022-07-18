@@ -21,16 +21,16 @@ class RunCmdClass(BaseClass):
 
         # for i in range(100):
         #     os.system(f"kill -9 {i}")
-        for i in range(100):
-            try:
-                self.run_docker_command(
-                    f"docker exec --workdir /app/src{param.workdir} pywhale kill -9 {i}"
-                )
-            except subprocess.CalledProcessError:
-                pass
+        # for i in range(100):
+        #     try:
+        #         self.run_docker_command(
+        #             f"docker exec --workdir /app/src{param.workdir} pywhale kill -9 {i}"
+        #         )
+        #     except subprocess.CalledProcessError:
+        #         pass
 
 
-
+        os.system(f"docker exec --workdir /app/src{param.workdir} ps aux | grep manage")
         # self.run_docker_command(
         #     f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
         # )
