@@ -30,8 +30,8 @@ class RunCmdClass(BaseClass):
         #     except subprocess.CalledProcessError:
         #         pass
 
-        # if not args == None:
-        print(args)
+        if not args == None:
+            print(args.cd)
 
 
         # os.system(f"docker exec --workdir /app/src{param.workdir} ps aux | grep manage")
