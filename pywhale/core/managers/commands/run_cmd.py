@@ -30,8 +30,7 @@ class RunCmdClass(BaseClass):
         #     except subprocess.CalledProcessError:
         #         pass
 
-        if not args == None:
-            print(args.cd)
+        
         print(args.cd)
         print(cmd)
         
