@@ -3,6 +3,7 @@ import pickle
 import os
 import subprocess
 
+
 class RunCmdClass(BaseClass):
     def run_command(self):
         args, unknown = self.parser.parse_known_args()
@@ -29,13 +30,18 @@ class RunCmdClass(BaseClass):
         #     except subprocess.CalledProcessError:
         #         pass
 
+        # if not args == None:
+        print(args)
+
 
         # os.system(f"docker exec --workdir /app/src{param.workdir} ps aux | grep manage")
         # self.run_docker_command(
         #     f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
         # )
         os.system(f"docker exec --workdir /app/src{param.workdir} pywhale ps aux | grep manage")
+
         print("if you would like to kill ports, pywhale run_cmd kill -9 number")
+
         os.system(f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}")
         # pywhale run_cmd kill -9 36
 

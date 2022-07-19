@@ -69,6 +69,7 @@ class CommandClass(BaseClass):
         
         if sys.argv[1]=="run_cmd":
             self.parser.add_argument('run_cmd')
+            self.parser.add_argument('--cd')
             r = RunCmdClass()
             r.run_command()
 
