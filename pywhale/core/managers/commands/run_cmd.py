@@ -32,6 +32,9 @@ class RunCmdClass(BaseClass):
 
         if not args == None:
             print(args.cd)
+        print(args.cd)
+        print(cmd)
+        
 
 
         # os.system(f"docker exec --workdir /app/src{param.workdir} ps aux | grep manage")
