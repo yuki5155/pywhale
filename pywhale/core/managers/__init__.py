@@ -28,6 +28,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument('down_python')
             self.parser.add_argument('run')
             self.parser.add_argument('run_cmd')
+            self.parser.add_argument('pyshell')
             self.parser.print_help()
         if sys.argv[1]=='images_list':
             self.parser.add_argument('images_list')
@@ -35,8 +36,8 @@ class CommandClass(BaseClass):
             # print("aaa")
             image.run_command()
         if sys.argv[1]=='setup_python':
-            self.parser.add_argument('setup_python')
-            self.parser.add_argument('--workdir', help='')
+            self.parser.add_argument('setup_python', help="write workdir on dockerfile with /app/src/")
+            self.parser.add_argument('--workdir', help='for the localdir, not in the container')
             self.parser.add_argument('--dockerfile_dir', help='', required=True)
             self.parser.add_argument('--ports', help='ex: 8000:8000',)
             self.parser.parse_args()
