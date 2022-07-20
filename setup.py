@@ -1,5 +1,5 @@
 from setuptools import setup
-
+import setuptools
 setup(
     name = 'pywhale',
     version = '1.0.0',
@@ -22,6 +22,7 @@ setup(
     #     "pywhale.core": ['./core/*'],
     #     'pywhale.templates.python_temps': ['python_temps/*']
     # },
+    packages=setuptools.find_packages(),
     entry_points = {
         'console_scripts': [
             'pywhale = pywhale.core.managers:start_command',
