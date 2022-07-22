@@ -10,6 +10,7 @@ from .commands.run import RunPythonClass
 # PyShellClass
 from .commands.pyshell import PyShellClass
 from .commands.run_cmd import RunCmdClass
+from .commands.startmysql import StartMySQLClass
 
 # def run_command(self, command=None):
 #     # command.
@@ -74,7 +75,11 @@ class CommandClass(BaseClass):
             r = RunCmdClass()
             r.run_command()
 
-        
+        if sys.argv[1]=="startmysql":
+            self.parser.add_argument('startmysql')
+            # self.parser.add_argument('--cd')
+            mysql = StartMySQLClass()
+            mysql.run_command()
         
             
 
