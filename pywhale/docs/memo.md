@@ -1,0 +1,1 @@
+mysql -u sample -p -h 127.0.0.1 -P 3306
