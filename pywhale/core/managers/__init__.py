@@ -1,6 +1,4 @@
 import sys
-import subprocess
-
 from .commands.image_list import ImageListClass
 from .base import BaseClass
 from .commands.setup_python import SetupPythonCLass
@@ -10,45 +8,49 @@ from .commands.run import RunPythonClass
 # PyShellClass
 from .commands.pyshell import PyShellClass
 from .commands.run_cmd import RunCmdClass
+from .commands.startmysql import StartMySQLClass
 
-# def run_command(self, command=None):
-#     # command.
-#     command = command.split(" ")
-#     # image_list = self.command.run(["docker","ps"], stdout=subprocess.PIPE, text=True, check=True)
-#     result = self.command.run(["docker","ps"], stdout=subprocess.PIPE, text=True, check=True)
-   
-#     print(result.stdout)
 
 class CommandClass(BaseClass):
-    
     def run_command(self):
-        if sys.argv[1]=='-h' or sys.argv[1]=='--h':
+        if sys.argv[1] == '-h' or sys.argv[1] == '--h':
             self.parser.add_argument('images_list')
             self.parser.add_argument('setup_python')
             self.parser.add_argument('down_python')
             self.parser.add_argument('run')
             self.parser.add_argument('run_cmd')
             self.parser.add_argument('pyshell')
+            self.parser.add_argument('startmysql')
             self.parser.print_help()
-        if sys.argv[1]=='images_list':
+        if sys.argv[1] == 'images_list':
             self.parser.add_argument('images_list')
             image = ImageListClass()
             # print("aaa")
             image.run_command()
-        if sys.argv[1]=='setup_python':
-            self.parser.add_argument('setup_python', help="write workdir on dockerfile with /app/src/")
-            self.parser.add_argument('--workdir', help='for the localdir, not in the container')
-            self.parser.add_argument('--dockerfile_dir', help='', required=True)
+        if sys.argv[1] == 'setup_python':
+            self.parser.add_argument(
+                'setup_python',
+                help="write workdir on dockerfile with /app/src/"
+            )
+            self.parser.add_argument(
+                '--workdir',
+                help='for the localdir, not in the container'
+            )
+            self.parser.add_argument(
+                '--dockerfile_dir',
+                help='',
+                required=True
+            )
             self.parser.add_argument('--ports', help='ex: 8000:8000',)
             self.parser.parse_args()
             s = SetupPythonCLass()
             s.run_command()
-        if sys.argv[1]=='down_python':
+        if sys.argv[1] == 'down_python':
             s = DownPythonCLass()
             s.run_command()
-        if sys.argv[1]=="start_python_project":
+        if sys.argv[1] == "start_python_project":
             pass
-        if sys.argv[1]=="run":
+        if sys.argv[1] == "run":
             self.parser.add_argument('run')
             self.parser.add_argument('--cmd', help='')
             self.parser.add_argument('--nocache', help='TRUE or False')
@@ -57,26 +59,26 @@ class CommandClass(BaseClass):
             r = RunPythonClass()
             r.run_command()
 
-        if sys.argv[1]=="install":
+        if sys.argv[1] == "install":
             self.parser.add_argument('install')
-            # ライブラリ名
-            # requirements.txtを生成して保存
 
-
-        if sys.argv[1]=="pyshell":
+        if sys.argv[1] == "pyshell":
             self.parser.add_argument('pyshell')
             p = PyShellClass()
             p.run_command()
-        
-        if sys.argv[1]=="run_cmd":
+
+        if sys.argv[1] == "run_cmd":
             self.parser.add_argument('run_cmd')
             self.parser.add_argument('--cd')
             r = RunCmdClass()
             r.run_command()
 
-        
-        
-            
+        if sys.argv[1] == "startmysql":
+            self.parser.add_argument('startmysql')
+            # self.parser.add_argument('--cd')
+            mysql = StartMySQLClass()
+            mysql.run_command()
+
 
 def start_command():
     c = CommandClass()
