@@ -5,4 +5,4 @@ class StartMySQLClass(BaseClass):
         # self.client.build("mysql")
         # MySQLのコンテナがあるのかを確認する
         print("aaaa")
-        print(self.client.list())
+        print(self.client.containers.list())
