@@ -4,5 +4,6 @@ class StartMySQLClass(BaseClass):
     def run_command(self):
         # self.client.build("mysql")
         # MySQLのコンテナがあるのかを確認する
-        print("aaaa")
-        print(self.client.containers.list())
+       
+        a = [container.name for container in self.client.containers.list()]
+        print(a)
