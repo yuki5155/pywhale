@@ -20,6 +20,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument('run')
             self.parser.add_argument('run_cmd')
             self.parser.add_argument('pyshell')
+            self.parser.add_argument('startmysql')
             self.parser.print_help()
         if sys.argv[1] == 'images_list':
             self.parser.add_argument('images_list')
