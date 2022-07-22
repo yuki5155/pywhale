@@ -17,7 +17,9 @@ class StartMySQLClass(BaseClass):
                     "MYSQL_ROOT_PASSWORD": "sample",
                     "MYSQL_USER": "sample",
                     "MYSQL_PASSWORD": "sample"
-                }
+                },
+                detach=True,
+                name="pywhalemysql"
             )
 
 
