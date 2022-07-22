@@ -8,5 +8,5 @@ class StartMySQLClass(BaseClass):
         a = [container.name for container in self.client.containers.list()]
         print(a)
         if not "pywhalemysql" in a:
-            self.client.containers.run('alpine', ports={'3306/tcp': ('0.0.0.0', 3306)})
+            self.client.containers.run('mysql', "mysql", ports={'3306/tcp': ('0.0.0.0', 3306)})
 
