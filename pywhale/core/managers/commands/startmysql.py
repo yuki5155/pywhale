@@ -25,6 +25,6 @@ class StartMySQLClass(BaseClass):
                 )
             except docker.errors.APIError:
                 # まずは消す
-                self.client.containers.remove("pywhalemysql")
+                self.client.containers.prune()
 
 
