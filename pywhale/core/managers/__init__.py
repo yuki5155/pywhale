@@ -78,6 +78,12 @@ class CommandClass(BaseClass):
             # self.parser.add_argument('--cd')
             mysql = StartMySQLClass()
             mysql.run_command()
+        
+        if sys.argv[1] == "create_dockerfile":
+            # self.parser.add_argument('startmysql')
+            # self.parser.add_argument('--cd')
+            mysql = StartMySQLClass()
+            mysql.run_command()
 
 
 def start_command():
