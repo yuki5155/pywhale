@@ -6,7 +6,7 @@ For the solution of the the operation system difference, docker is one of the po
 
 However, without docker-compose and dockerfiles someone already created, learning docker is sometime complicated for who have never built infrastructures or Virtual environment on cloud services or on-premise.
 
-this library is for developers who desire to avoid to spend time on building the environments on any projects and beginner developpers.
+this library is for developers who desire to avoid to spend time on building the environments on any projects and beginners.
 
 ### for example
 
