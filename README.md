@@ -8,7 +8,7 @@ However, without docker-compose and dockerfiles someone already created, learnin
 
 this library is for developers who desire to avoid to spend time on building the environments on any projects and beginners.
 
-### for example
+### examples
 
 - to avoid to install required libraries or softwares for the usage of aws-cli and cdk.
 - to create the cache(redis) and database containers with one command that are connectable from other containers.
