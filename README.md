@@ -1,12 +1,12 @@
 ## description
 
-most projects frequently face to the operation system difference between developers who join in.
+most projects frequently face to the problem of the operation system difference between developers who join in.
 
-For the solution of the the operation system difference, docker is popular and often used with container management services.
+For the solution of the the operation system difference, docker is one of the popular and often used on the cloud with container management services.
 
-However, learning docker is sometime complicated for who do not used to build infrastructures or Virtual environment on cloud services or on-premise.
+However, without docker-compose and dockerfiles someone already created, learning docker is sometime complicated for who have never built infrastructures or Virtual environment on cloud services or on-premise.
 
-this library is for developers who desire to avoid to spend time on building the environments on any projects.
+this library is for developers who desire to avoid to spend time on building the environments on any projects and beginner developpers.
 
 ### for example
 
@@ -26,13 +26,15 @@ before the beginning, those installations are recommended.
 only python3 supported!!, not python2!!
 run docker before running commands below
 
+
 ```
 pip install git+https://github.com/yuki5155/pywhale.git
 
-# check that docker container can run
+# check that docker container can run or not
 
+# comining soon
 # download dockerfile
-pywhale 
+# pywhale 
 
 ```
 
