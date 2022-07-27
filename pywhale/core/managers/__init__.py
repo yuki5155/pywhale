@@ -9,6 +9,7 @@ from .commands.run import RunPythonClass
 from .commands.pyshell import PyShellClass
 from .commands.run_cmd import RunCmdClass
 from .commands.startmysql import StartMySQLClass
+from .commands.create_dockerfile import CreateDockerfileCLass
 
 
 class CommandClass(BaseClass):
@@ -22,11 +23,15 @@ class CommandClass(BaseClass):
             self.parser.add_argument('pyshell')
             self.parser.add_argument('startmysql')
             self.parser.print_help()
+
+
         if sys.argv[1] == 'images_list':
             self.parser.add_argument('images_list')
             image = ImageListClass()
             # print("aaa")
             image.run_command()
+
+            
         if sys.argv[1] == 'setup_python':
             self.parser.add_argument(
                 'setup_python',
@@ -82,8 +87,8 @@ class CommandClass(BaseClass):
         if sys.argv[1] == "create_dockerfile":
             # self.parser.add_argument('startmysql')
             # self.parser.add_argument('--cd')
-            mysql = StartMySQLClass()
-            mysql.run_command()
+            Dockerfile = CreateDockerfileCLass()
+            Dockerfile.run_command()
 
 
 def start_command():
