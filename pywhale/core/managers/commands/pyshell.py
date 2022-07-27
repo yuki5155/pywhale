@@ -1,8 +1,8 @@
 from pywhale.core.managers.base import BaseClass
 import os
-import pty
+# import pty
 
-pty, tty = pty.openpty()
+# pty, tty = pty.openpty()
 
 
 class PyShellClass(BaseClass):
