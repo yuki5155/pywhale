@@ -10,6 +10,8 @@ class PyShellClass(BaseClass):
         print(args, unknown)
         if args.t == None:
             a = [container.name for container in self.client.containers.list()]
-            print(a)
+            # print(a)
+            for c, i in enumerate(a):
+                print(f"[{c}]:{i}")
         # os.system(f'docker container exec -it pywhale bash')
         # os.system('docker container exec -it pywhale bash')
