@@ -17,5 +17,5 @@ class PyShellClass(BaseClass):
             container_number = input()
             container_number = int(container_number)
             print(container_list[container_number])
-        # os.system(f'docker container exec -it pywhale bash')
+            os.system(f'docker container exec -it {container_list[container_number]} bash')
         # os.system('docker container exec -it pywhale bash')
