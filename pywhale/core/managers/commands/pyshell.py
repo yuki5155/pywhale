@@ -1,11 +1,12 @@
+from traceback import print_tb
 from pywhale.core.managers.base import BaseClass
 import os
-# import pty
-
-# pty, tty = pty.openpty()
+# import argparse
 
 
 class PyShellClass(BaseClass):
     def run_command(self):
-
-        os.system('docker container exec -it pywhale bash')
+        args, unknown = self.parser.parse_known_args()
+        print(args, unknown)
+        # os.system(f'docker container exec -it pywhale bash')
+        # os.system('docker container exec -it pywhale bash')
