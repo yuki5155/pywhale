@@ -69,6 +69,7 @@ class CommandClass(BaseClass):
 
         if sys.argv[1] == "pyshell":
             self.parser.add_argument('pyshell')
+            self.parser.add_argument('--t')
             p = PyShellClass()
             p.run_command()
 
