@@ -9,9 +9,13 @@ class PyShellClass(BaseClass):
         args, unknown = self.parser.parse_known_args()
         print(args, unknown)
         if args.t == None:
-            a = [container.name for container in self.client.containers.list()]
+            container_list = [container.name for container in self.client.containers.list()]
             # print(a)
-            for c, i in enumerate(a):
+            print("select a container you desire to get into")
+            for c, i in enumerate(container_list):
                 print(f"[{c}]:{i}")
+            container_number = input()
+            container_number = int(container_number)
+            print(container_list[container_number])
         # os.system(f'docker container exec -it pywhale bash')
         # os.system('docker container exec -it pywhale bash')
