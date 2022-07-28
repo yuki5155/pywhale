@@ -38,6 +38,11 @@ pip install git+https://github.com/yuki5155/pywhale.git
 
 ```
 
+## pywhale pyshell
+
+this command show you containers list runs on your device.
+you just need to select one and the command let you get into the container you wish to go.
+
 ## MySQL
 
 to start running the MySQL container
