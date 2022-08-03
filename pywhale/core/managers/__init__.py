@@ -22,6 +22,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument('run_cmd')
             self.parser.add_argument('pyshell')
             self.parser.add_argument('startmysql')
+            self.parser.add_argument('create_dockerfile')
             self.parser.print_help()
 
 
