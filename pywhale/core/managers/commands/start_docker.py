@@ -8,4 +8,7 @@ class StartDockerCLass(BaseClass):
         args, unknown = self.parser.parse_known_args()
         # if docker_file is None:
         #     docker_file = os.getcwd() + "./"
-        print(args, unknown)
+        # print(args, unknown)
+
+        port = args.port
+        print(port)
