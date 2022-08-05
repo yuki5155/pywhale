@@ -10,6 +10,7 @@ from .commands.pyshell import PyShellClass
 from .commands.run_cmd import RunCmdClass
 from .commands.startmysql import StartMySQLClass
 from .commands.create_dockerfile import CreateDockerfileCLass
+from .commands.start_docker import StartDockerCLass
 
 
 class CommandClass(BaseClass):
@@ -22,7 +23,8 @@ class CommandClass(BaseClass):
             self.parser.add_argument('run_cmd')
             self.parser.add_argument('pyshell')
             self.parser.add_argument('startmysql')
-            self.parser.add_argument('create_dockerfile')
+            self.parser.add_argument('start_docker')
+            # self.parser.add_argument('create_dockerfile')
             self.parser.print_help()
 
 
@@ -85,12 +87,22 @@ class CommandClass(BaseClass):
             # self.parser.add_argument('--cd')
             mysql = StartMySQLClass()
             mysql.run_command()
-        
-        if sys.argv[1] == "create_dockerfile":
-            # self.parser.add_argument('startmysql')
+
+        # startdockerを作成
+
+        if sys.argv[1] == "start_docker":
+            self.parser.add_argument('start_docker')
             # self.parser.add_argument('--cd')
-            Dockerfile = CreateDockerfileCLass()
-            Dockerfile.run_command()
+            self.parser.add_argument('--t')
+            self.parser.add_argument('--port')
+            StartDocker = StartDockerCLass()
+            StartDocker.run_command()
+        
+        # if sys.argv[1] == "create_dockerfile":
+        #     # self.parser.add_argument('startmysql')
+        #     # self.parser.add_argument('--cd')
+        #     Dockerfile = CreateDockerfileCLass()
+        #     Dockerfile.run_command()
 
 
 def start_command():
