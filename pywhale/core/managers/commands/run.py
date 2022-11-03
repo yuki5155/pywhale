@@ -17,9 +17,7 @@ class RunPythonClass(BaseClass):
         # ディレクトリ元を丸ごとコピーしてコンテナ内に入れる
 
         # docker内のworkdir内にコピーする
-        self.run_docker_command(
-            f"docker cp .{param.workdir} pywhale:/app/src"
-        )
+        self.run_docker_command(f"docker cp .{param.workdir} pywhale:/app/src")
         # 指定されたコマンドを実行
         self.run_docker_command(
             f"docker exec --workdir /app/src{param.workdir} pywhale python {cmd}"

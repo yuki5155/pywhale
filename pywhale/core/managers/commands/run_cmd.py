@@ -16,9 +16,7 @@ class RunCmdClass(BaseClass):
         cmd = " ".join(unknown)
 
         # ローカルのディレクトリをコンテナ内にコピーする
-        self.run_docker_command(
-            f"docker cp .{param.workdir} pywhale:/app/src"
-        )
+        self.run_docker_command(f"docker cp .{param.workdir} pywhale:/app/src")
 
         # for i in range(100):
         #     os.system(f"kill -9 {i}")
@@ -30,27 +28,26 @@ class RunCmdClass(BaseClass):
         #     except subprocess.CalledProcessError:
         #         pass
 
-        os.system(f"docker exec --workdir /app/src{param.workdir} pywhale ps aux | grep manage")
+        os.system(
+            f"docker exec --workdir /app/src{param.workdir} pywhale ps aux | grep manage"
+        )
         # print("if you would like to kill ports, pywhale run_cmd kill -9 number")
         # print(args.cd)
         if args.cd != None:
 
-            os.system(f"docker exec --workdir /app/src{param.workdir}/{args.cd} pywhale {cmd}")
-
+            os.system(
+                f"docker exec --workdir /app/src{param.workdir}/{args.cd} pywhale {cmd}"
+            )
 
         # os.system(f"docker exec --workdir /app/src{param.workdir} ps aux | grep manage")
         # self.run_docker_command(
         #     f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}"
         # )
-        
 
-        
         else:
             os.system(f"docker exec --workdir /app/src{param.workdir} pywhale {cmd}")
         # pywhale run_cmd kill -9 36
 
         # pywhale run_cmd ps aux | grep manage
         # コンテナ側のディレクトリをコピーする
-        self.run_docker_command(
-            f"docker cp pywhale:/app/src/{param.workdir} ./"
-        )
+        self.run_docker_command(f"docker cp pywhale:/app/src/{param.workdir} ./")
