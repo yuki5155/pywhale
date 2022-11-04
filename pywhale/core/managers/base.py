@@ -12,6 +12,8 @@ class BaseClass:
     command = subprocess
     client = docker.from_env()
     operating_system = platform.system()
+    docker_images = []
+    docker_containers = []
 
     def run_docker_command(self, cmd=None):
         cmd = cmd.split(" ")

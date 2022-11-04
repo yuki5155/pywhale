@@ -2,7 +2,7 @@ from setuptools import setup
 import setuptools
 setup(
     name = 'pywhale',
-    version = '1.0.0',
+    version = '1.0.1',
     url = 'https://github.com/yuki5155/pywhale.git',
     license = 'Free',
     author = 'Yuki Asano',

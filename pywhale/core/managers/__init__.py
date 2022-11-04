@@ -11,7 +11,7 @@ from .commands.pyshell import PyShellClass
 from .commands.run_cmd import RunCmdClass
 from .commands.startmysql import StartMySQLClass
 from .commands.create_dockerfile import CreateDockerfileCLass
-
+from .commands.startredis import StartRedis
 
 class CommandClass(BaseClass):
     def run_command(self):
@@ -24,6 +24,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument("pyshell")
             self.parser.add_argument("startmysql")
             self.parser.add_argument("create_dockerfile")
+            self.parser.add_argument("startredis")
             self.parser.print_help()
 
         if sys.argv[1] == "images_list":
@@ -87,6 +88,9 @@ class CommandClass(BaseClass):
             # self.parser.add_argument('--cd')
             Dockerfile = CreateDockerfileCLass()
             Dockerfile.run_command()
+        if sys.argv[1] == "startredis":
+            redis = StartRedis()
+            redis.run_command()
 
 
 def start_command():

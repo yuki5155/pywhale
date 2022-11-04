@@ -2,28 +2,33 @@ from pywhale.core.managers.base import BaseClass
 import docker
 
 
-# host.docker.internal:host-gateway
+
 class StartMySQLClass(BaseClass):
+
     def linux_container_run(self):
-
+        
         self.client.containers.run(
-            "mysql",
-            ports={"3306/tcp": ("0.0.0.0", 3306)},
-            environment={
-                "MYSQL_ROOT_PASSWORD": "sample",
-                "MYSQL_USER": "sample",
-                "MYSQL_PASSWORD": "sample",
-            },
-            detach=True,
-            name="pywhalemysql",
-            extra_hosts={"host.docker.internal": "host-gateway"},
-        )
+            'mysql', 
+                    ports={
+                        '3306/tcp': ('0.0.0.0', 3306)
+                    },
+                    environment = {
+                        "MYSQL_ROOT_PASSWORD": "sample",
+                        "MYSQL_USER": "sample",
+                        "MYSQL_PASSWORD": "sample"
+                    },
+                    detach=True,
+                    name="pywhalemysql",
+                    extra_hosts={
+                        "host.docker.internal": "host-gateway"
+                    }
 
+                )
     def run_command(self):
         # MySQLのコンテナがあるのかを確認する
-
+       
         a = [container.name for container in self.client.containers.list()]
-
+        
         if not "pywhalemysql" in a:
             if self.operating_system == "Linux":
                 try:
@@ -35,27 +40,34 @@ class StartMySQLClass(BaseClass):
             else:
                 try:
                     self.client.containers.run(
-                        "mysql",
-                        ports={"3306/tcp": ("0.0.0.0", 3306)},
-                        environment={
+                        'mysql', 
+                        ports={
+                            '3306/tcp': ('0.0.0.0', 3306)
+                        },
+                        environment = {
                             "MYSQL_ROOT_PASSWORD": "sample",
                             "MYSQL_USER": "sample",
-                            "MYSQL_PASSWORD": "sample",
+                            "MYSQL_PASSWORD": "sample"
                         },
                         detach=True,
-                        name="pywhalemysql",
+                        name="pywhalemysql"
                     )
                 except docker.errors.APIError:
                     # まずは消す
                     self.client.containers.prune()
                     self.client.containers.run(
-                        "mysql",
-                        ports={"3306/tcp": ("0.0.0.0", 3306)},
-                        environment={
+                        'mysql', 
+                        ports={
+                            '3306/tcp': ('0.0.0.0', 3306)
+                        },
+                        environment = {
                             "MYSQL_ROOT_PASSWORD": "sample",
                             "MYSQL_USER": "sample",
-                            "MYSQL_PASSWORD": "sample",
+                            "MYSQL_PASSWORD": "sample"
                         },
                         detach=True,
-                        name="pywhalemysql",
+                        name="pywhalemysql"
                     )
+
+
+
