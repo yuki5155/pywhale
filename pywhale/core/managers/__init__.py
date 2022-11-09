@@ -12,6 +12,7 @@ from .commands.run_cmd import RunCmdClass
 from .commands.startmysql import StartMySQLClass
 from .commands.create_dockerfile import CreateDockerfileCLass
 from .commands.startredis import StartRedis
+from .commands.down_container import DownContainerClass
 
 class CommandClass(BaseClass):
     def run_command(self):
@@ -19,6 +20,7 @@ class CommandClass(BaseClass):
             self.parser.add_argument("images_list")
             self.parser.add_argument("setup_python")
             self.parser.add_argument("down_python")
+            self.parser.add_argument("down_container")
             self.parser.add_argument("run")
             self.parser.add_argument("run_cmd")
             self.parser.add_argument("pyshell")
@@ -26,7 +28,11 @@ class CommandClass(BaseClass):
             self.parser.add_argument("create_dockerfile")
             self.parser.add_argument("startredis")
             self.parser.print_help()
-
+        if sys.argv[1] == "down_container":
+            self.parser.add_argument("down_container")
+            down_container = DownContainerClass()
+            down_container.run_command()
+        
         if sys.argv[1] == "images_list":
             self.parser.add_argument("images_list")
             image = ImageListClass()

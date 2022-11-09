@@ -38,10 +38,18 @@ pip install git+https://github.com/yuki5155/pywhale.git
 
 ```
 
+## pywhale down_container
+
+this command helps you to delete a container.
+as soon as you enter this command, and there is more than a comtainer is existed, pywhale shows you option to delete containers(recommend to choose "d").
+
+warnning!
+down_container forcelly deletes a container and a volume!!
+
 ## pywhale pyshell
 
-this command show you containers list runs on your device.
-you just need to select one and the command let you get into the container you wish to go.
+this command shows you containers list runs on your device.
+you just need to select one and the command lets you get into the container you select.
 
 ## MySQL
 
