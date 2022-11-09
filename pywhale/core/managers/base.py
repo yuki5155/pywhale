@@ -15,6 +15,10 @@ class BaseClass:
     docker_images = []
     docker_containers = []
 
+    def set_docker_images(self):
+        pass
+        # self.client.
+
     def run_docker_command(self, cmd=None):
         cmd = cmd.split(" ")
         image_list = subprocess.run(cmd, stdout=subprocess.PIPE, text=True, check=True)
