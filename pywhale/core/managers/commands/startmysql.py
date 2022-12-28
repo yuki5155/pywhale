@@ -15,7 +15,8 @@ class StartMySQLClass(BaseClass):
                     environment = {
                         "MYSQL_ROOT_PASSWORD": "sample",
                         "MYSQL_USER": "sample",
-                        "MYSQL_PASSWORD": "sample"
+                        "MYSQL_PASSWORD": "sample",
+                        "MYSQL_DATABASE": "database2"
                     },
                     detach=True,
                     name="pywhalemysql",
@@ -47,7 +48,8 @@ class StartMySQLClass(BaseClass):
                         environment = {
                             "MYSQL_ROOT_PASSWORD": "sample",
                             "MYSQL_USER": "sample",
-                            "MYSQL_PASSWORD": "sample"
+                            "MYSQL_PASSWORD": "sample",
+                            "MYSQL_DATABASE": "database2"
                         },
                         detach=True,
                         name="pywhalemysql"
@@ -63,7 +65,8 @@ class StartMySQLClass(BaseClass):
                         environment = {
                             "MYSQL_ROOT_PASSWORD": "sample",
                             "MYSQL_USER": "sample",
-                            "MYSQL_PASSWORD": "sample"
+                            "MYSQL_PASSWORD": "sample",
+                            "MYSQL_DATABASE": "database2"
                         },
                         detach=True,
                         name="pywhalemysql"
